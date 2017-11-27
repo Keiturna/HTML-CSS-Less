@@ -1,0 +1,47 @@
+@color-primary: #a02a2a;
+@font-family:"Georgia,  serif";
+@root-size:16px;
+@font-size:unit((24px /@root-size),em);
+@font-size-large:@font-size*1.3;
+
+body{
+  font:@font-size/1.5em @font-family;
+  color: @color-primary;
+}
+
+.button{
+  padding:1em;
+  text-align:center;
+  background-color:@color-primary;
+  color:white;
+}
+
+.variant {
+ color: pink;
+}
+
+/* Grille */
+.wrapper{
+    
+    margin:0 auto;
+    background-color:#d9d9d9;
+    outline:1px dotted red;
+}
+
+.wrapper(@width:auto){
+    &:extend(.wrapper);
+    width:@width;
+}
+
+@media screen and (min-width:50rem){
+    .wrapper{.wrapper(50rem);}
+    /*.wrapper{
+        width:50rem;
+        font-size:@font-size-large;
+        line-height: 1.5em;
+    }*/
+}
+
+@media screen and (min-width:64rem){
+    .wrapper{.wrapper(64rem);}
+}
